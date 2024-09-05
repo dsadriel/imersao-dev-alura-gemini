@@ -23,7 +23,7 @@ function itemParaHTML(item) {
                 <div class="tags">
                     ${item.tags.map(tag => `<span>${tag}</span>`).join('')}
                 </div>
-                <p class="info">${minutosParaTexto(item.tempoDePreparo)} | ${item.rende} | Fonte: ${item.link.split('/')[2].replace('www.', '')}</p>
+                <p class="info">${minutosParaTexto(item.tempoDePreparo)} | ${item.dificuldade} | Fonte: ${item.link.split('/')[2].replace('www.', '')}</p>
                 <p class="descricao">${item.descricao}</p>
                 <a href="${item.link}" target="_blank" rel="noopener noreferrer">Ver receita</a>
             </div>
