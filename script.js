@@ -23,7 +23,7 @@ function itemParaHTML(item) {
                 <div class="tags">
                     ${item.tags.map(tag => `<span>${tag}</span>`).join('')}
                 </div>
-                <p class="info">${minutosParaTexto(item.tempoDePreparo)} | ${item.dificuldade} | Fonte: ${item.link.split('/')[2].replace('www.', '')}</p>
+                <p class="info">${minutosParaTexto(item.tempoDePreparo)} | ${item.extra} | Fonte: ${item.link.split('/')[2].replace('www.', '')}</p>
                 <p class="descricao">${item.descricao}</p>
                 <a href="${item.link}" target="_blank" rel="noopener noreferrer">Ver receita</a>
             </div>
@@ -50,6 +50,14 @@ function buscarReceitas() {
 
     let resultado = [];
 
+    if (termo === '') {
+        elementoResultado.innerHTML =
+            '<p style="text-align:center; font-weight:bold;">Por favor, digite um termo para buscar.</p>';
+        
+        return;
+    }
+
+
     // Filtra os dados de acordo com o termo e o filtro selecionado
     if (filtro === 'nome') {
         resultado = dados.filter(item => item.nome.toLowerCase().includes(termo));
@@ -62,14 +70,44 @@ function buscarReceitas() {
 
     // Exibe os resultados na página
     if (resultado.length === 0) {
-        elementoResultado.innerHTML = '<p style="text-align:center">Nenhum resultado encontrado.</p>';
+        elementoResultado.innerHTML = '<p style="text-align:center">Nenhum resultado encontrado. O que tal pergunta para a <a href="https://gemini.google.com/app" target="_blank"><img class="inline" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Google_Gemini_logo.svg/1280px-Google_Gemini_logo.svg.png"><a>?</p>';
     } else {
         elementoResultado.innerHTML = resultado.map(itemParaHTML).join('');
     }
 
     document.querySelector('header').style.height = 'auto';
 }
+
+
+function receitasAleatorias(qtde, texto) {
+    let receitasAleatorias = [];
+    let indiceAleatorio;
+    
+    if(typeof qtde != 'number') qtde = 3;
+
+    if (qtde === undefined) qtde = 3;
+    if (texto === undefined) texto = 'Que tal experimentar essas receitas?';
+    
+    // Limita a quantidade de receitas aleatórias ao tamanho do array
+    if(qtde > dados.length) qtde = dados.length;
+    
+    for (let i = 0; i < qtde; i++) {
+        indiceAleatorio = Math.floor(Math.random() * dados.length);
+            if(receitasAleatorias.includes(dados[indiceAleatorio])) i--;
+        else
+            receitasAleatorias.push(dados[indiceAleatorio]);
+    }
+
+    document.querySelector('#resultados').innerHTML = `
+        <p>${texto}</p>
+        ${receitasAleatorias.map(itemParaHTML).join('')}`;
+
+}
+
+
+
 document.getElementById('buscar').addEventListener('click', buscarReceitas);
+document.getElementById('estou-com-sorte').addEventListener('click', receitasAleatorias);
 document.getElementById('busca').addEventListener('keypress', function (event) {
     if (event.key === 'Enter') buscarReceitas();
 });
@@ -79,3 +117,6 @@ showSlide(slideIndex);
 
 // Alterar os slides automaticamente a cada 3 segundos
 setInterval(nextSlide, 3000);
+
+// Exibir receitas aleatórias ao carregar a página
+receitasAleatorias(1, 'Que tal experimentar essa receita?');
