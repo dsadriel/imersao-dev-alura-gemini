@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Catálogo de Receitas - Sabores da Alma</title>
+</head>
+
+<body>
+    <header class="pagina-principal">
+        <section>
+            <h1>Sabores da Alma</h1>
+            <p>
+                Descubra sabores irresistíveis para transformar sua rotina na cozinha.<br> 
+                Encontre receitas pelo nome, categoria ou tempo de preparo e torne cada refeição especial.
+            </p>
+            <div>
+                <select id="filtro" aria-label="Filtro de receitas">
+                    <option value="nome">Nome</option>
+                    <option value="categoria">Categoria</option>
+                    <option value="tempo">Tempo de preparo</option>
+                </select>
+                <input type="text" id="busca" placeholder="Digite aqui" aria-label="Digite para buscar receitas">
+                <button id="buscar">Buscar</button>
+            </div>
+        </section>
+        <section class="imagens-capa">
+            <img src="/assets/images/pessoas-cozinhando-1.png" alt="Grupo de pessoas cozinhando em uma cozinha">
+            <img src="/assets/images/pessoas-cozinhando-2.png" alt="Duas pessoas preparando refeições juntas">
+            <img src="/assets/images/pessoas-cozinhando-3.png" alt="Chef orientando uma turma de culinária">
+            <a href="https://br.freepik.com/vetores-gratis/pessoas-cozinhando-o-conceito_7943860.htm#fromView=search&page=1&position=31&uuid=aef6f2be-abcc-4437-8c85-f84036b004d3" target="_blank" rel="noopener noreferrer">
+                Imagem de freepik
+            </a>
+        </section>
+    </header>
+
+    <main class="busca">
+        <section id="resultados">
+            <!-- Os resultados da busca irão aparecer aqui -->
+        </section>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por <a href="https://www.linkedin.com/in/dsadriel/" target="_blank" rel="noopener noreferrer">Adriel de Souza</a> como parte da Imersão Dev da Alura + Google Gemini</p>
+    </footer>
+    <script src="dados.js"></script>
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

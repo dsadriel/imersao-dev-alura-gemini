@@ -1,0 +1,227 @@
+/* Importação de fontes */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* Variáveis CSS */
+:root {
+    --cor-fundo: #f4f4f4;
+    --cor-texto-principal: #2b2b2b;
+    --cor-primaria: #f9d400;
+    --cor-secundaria: #443900;
+    --cor-destaque: #ffef96;
+    --cor-link-hover: #ffffff;
+}
+
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo do body */
+body {
+    font-family: "Inter", sans-serif;
+    background-color: var(--cor-fundo);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Estilo dos cabeçalhos */
+h1, h2, h3, h4, h5 {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+}
+
+/* Estilo do footer */
+footer {
+    background-color: var(--cor-texto-principal);
+    color: var(--cor-primaria);
+    text-align: center;
+    width: 100%;
+    margin-top: 1rem;
+    font-size: .9rem;
+}
+
+footer p {
+    padding: .5rem;
+}
+
+footer a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 150ms;
+}
+
+footer a:hover, footer a:focus {
+    color: var(--cor-link-hover);
+}
+
+/* Estilo do header */
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 7rem;
+    height: 100vh;
+    transition: height 150ms;
+}
+
+header p {
+    font-size: .95rem;
+    color: var(--cor-texto-principal);
+    margin: 0;
+    margin-bottom: 1rem;
+    margin-left: .5rem;
+    max-width: 32rem;
+}
+
+header a {
+    margin-left: .5rem;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    text-decoration: none;
+}
+
+/* Estilo dos cabeçalhos dentro do header */
+header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--cor-texto-principal);
+    margin: 0;
+    margin-bottom: .3rem;
+}
+
+/* Estilo dos botões e inputs */
+button, input[type="submit"], a[type="button"] {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-principal);
+    font-size: 1rem;
+    font-weight: 400;
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 150ms, color 150ms;
+}
+
+button:hover, input[type="submit"]:hover, a[type="button"]:hover, button:focus, input[type="submit"]:focus, a[type="button"]:focus {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-link-hover);
+}
+
+/* Estilo de inputs e selects */
+input[type="text"], input[type="search"], select {
+    padding: .5rem 1rem;
+    border: 1px solid rgba(43, 43, 43, 0.392);
+    border-radius: 5px;
+    font-size: .95rem;
+    margin-right: .2rem;
+}
+
+/* Estilo dos itens de resultado */
+.item-resultado {
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: .5rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.item-resultado img {
+    height: 8rem;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 1rem;
+}
+
+.item-resultado .detalhes {
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+
+.item-resultado .detalhes h2 {
+    font-weight: 500;
+}
+
+.item-resultado .detalhes .descricao {
+    font-size: .9rem;
+    color: var(--cor-texto-principal);
+}
+
+.item-resultado .detalhes a {
+    font-size: .9rem;
+    color: var(--cor-primaria);
+    text-decoration: underline;
+    transition: color 150ms;
+}
+
+.item-resultado .detalhes a:hover, .item-resultado .detalhes a:focus {
+    color: var(--cor-secundaria);
+}
+
+.item-resultado .detalhes .info {
+    font-size: .8rem;
+    font-style: italic;
+}
+
+section#resultados {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 7rem;
+}
+
+.item-resultado .tags span {
+    background-color: var(--cor-destaque);
+    border: 1px solid var(--cor-primaria);
+    color: var(--cor-texto-principal);
+    padding: .2rem .5rem;
+    border-radius: 5px;
+    font-size: .7rem;
+    margin-right: .5rem;
+}
+
+.item-resultado .tags {
+    margin-bottom: .5rem;
+}
+
+/* Estilo para a apresentação dos slides */
+.imagens-capa {
+    position: relative;
+    width: 50%;
+    height: 500px;
+}
+
+.imagens-capa a {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: .3rem;
+    font-size: .5rem;
+    opacity: 0.1;
+    transition: opacity 150ms;
+}
+
+.imagens-capa a:hover, .imagens-capa a:focus {
+    opacity: 1;
+}
+
+.imagens-capa img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.imagens-capa img.active {
+    opacity: 1;
+}
