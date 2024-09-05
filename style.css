@@ -189,6 +189,9 @@ section#resultados {
 
 .item-resultado .tags {
     margin-bottom: .5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 /* Estilo para a apresentação dos slides */
@@ -224,4 +227,34 @@ section#resultados {
 
 .imagens-capa img.active {
     opacity: 1;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+    header {
+        padding: 0 2rem;
+    }
+
+    section#resultados {
+        padding: 1rem 2rem;
+    }
+
+    .imagens-capa {
+        display: none;
+        width: 100%;
+        height: 300px;
+    }
+
+    .item-resultado {
+        flex-direction: column;
+    }
+    .item-resultado img {
+        height: 6rem;
+        width: 100%;
+        margin: auto;
+    }
+
+
 }
