@@ -3,6 +3,8 @@
 Projeto desenvolvido durante a **Imersão Dev** da **Alura** em parceria com o **Google Gemini**. O objetivo deste projeto é criar uma aplicação web simples do zero, utilizando HTML e os conceitos aprendidos nas aulas. A base de conhecimento escolhida foi a culinária, com a criação de um site de receitas chamado **Sabores da Alma** para agregar receitas.
 [Acesse o site do projeto](https://dsadriel.github.io/imersao-dev-alura-gemini/)
 
+![Imagem do site](preview.png)
+
 
 ## Objetivo do Projeto
 
