@@ -43,8 +43,13 @@ function nextSlide() {
     showSlide(slideIndex);
 }
 
+function normalizar(texto) {
+    // Remove acentos e espaços e converte para minúsculas
+    return texto.toLowerCase().replace(/\s/g, '').normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
 function buscarReceitas() {
-    const termo = document.querySelector('#busca').value.toLowerCase();
+    const termo = normalizar(document.querySelector('#busca').value);
     const filtro = document.querySelector('#filtro').value;
     const elementoResultado = document.querySelector('#resultados');
 
@@ -60,9 +65,9 @@ function buscarReceitas() {
 
     // Filtra os dados de acordo com o termo e o filtro selecionado
     if (filtro === 'nome') {
-        resultado = dados.filter(item => item.nome.toLowerCase().includes(termo));
+        resultado = dados.filter(item => normalizar(item.nome).includes(termo));
     } else if (filtro === 'categoria') {
-        resultado = dados.filter(item => item.tags.some(tag => tag.toLowerCase().includes(termo)));
+        resultado = dados.filter(item => item.tags.some(tag => normalizar(tag).includes(termo)));
     } else {
         const tempo = parseInt(termo);
         resultado = dados.filter(item => item.tempoDePreparo <= tempo);
