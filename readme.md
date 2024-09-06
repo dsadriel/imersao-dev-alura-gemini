@@ -1,43 +1,49 @@
 # Sabores da Alma
 
-Projeto desenvolvido durante a **Imersão Dev** da **Alura** em parceria com o **Google Gemini**. O objetivo deste projeto é criar uma aplicação web simples do zero, utilizando HTML e os conceitos aprendidos nas aulas. A base de conhecimento escolhida foi a culinária, com a criação de um site de receitas chamado **Sabores da Alma** para agregar receitas.
-[Acesse o site do projeto](https://dsadriel.github.io/imersao-dev-alura-gemini/)
+**Sabores da Alma** é um catálogo de receitas online que oferece uma experiência simples e prática para quem busca descobrir novos sabores e transformar a rotina na cozinha. Este projeto foi desenvolvido durante a Imersão Dev da Alura + Google Gemini.
 
 ![Imagem do site](preview.png)
 
+## Visão Geral
 
-## Objetivo do Projeto
+O **Sabores da Alma** é um site que permite aos usuários encontrar receitas de maneira fácil, utilizando filtros como nome, categoria ou tempo de preparo. Além disso, o usuário pode contar com a função "Estou com sorte", que exibe uma receita aleatória.
 
-O objetivo principal do projeto **Sabores da Alma** é demonstrar a criação de um site do zero, aplicando as tecnologias e práticas ensinadas durante a Imersão Dev. O foco está em explorar o **Google Gemini** para fornecer uma experiência prática, limitada ao que foi apresentado nas aulas.
-
-## Tecnologias Utilizadas
-
-- HTML
-- CSS
-- JS
+O projeto está disponível online e pode ser acessado em: [Sabores da Alma](https://dsadriel.github.io/imersao-dev-alura-gemini/).
 
 ## Funcionalidades
+- **Busca por receitas:** Utilize filtros para encontrar receitas pelo nome,categoria ou tempo de preparo.
+- **Estou com sorte:** Clique no botão "Estou com sorte" para receber uma sugestão de receita aleatória.
+- **Interface intuitiva:** Simples e prática para facilitar a navegação.
+- **Responsivo:** Otimizado para dispositivos móveis e desktop.
 
-- Estruturação de páginas web simples com HTML.
-- Estilização básica utilizando CSS para dar identidade visual ao site.
-- Uso de JavaScript para apresentar informações dinâmicas na página através de filtros e interações com o usuário.
+## Tecnologias Utilizadas
+- **HTML5:** Estrutura básica do site.
+- **CSS3:** Estilização e layout.
+- **JavaScript:** Interatividade com os usuários e lógica da busca.
+- **Google Gemini:** Usado para facilitar a criação do site.
+    - Também foi utilizado **AI Studio** para a geração das informações das receitas, com base no nome da receita.
 
-## Como Executar
+## Instalação
+Para rodar o projeto localmente, siga os passos abaixo:
+Clone este repositório:
+```bash
+git clone https://github.com/dsadriel/imersao-dev-alura-gemini.git
+```
 
-1. Clone este repositório:
-2. Navegue até o diretório do projeto:
-3. Abra o arquivo `index.html` no seu navegador preferido.
+Navegue até a pasta do projeto:
+```bash
+cd imersao-dev-alura-gemini
+```
+Abra o arquivo `index.html` em um navegador para visualizar o site localmente.
 
-## Desafios e Aprendizados
+## Como Usar
+No topo da página, você encontrará um campo de busca onde poderá digitar o nome da receita ou usar os filtros disponíveis.
 
-Este projeto segue os limites das tecnologias e conceitos abordados na Imersão Dev, explorando principalmente a construção de um site estático, desde a estruturação até o design.
+Após inserir os critérios de busca, clique em Buscar para visualizar as receitas.
+
+Se estiver em dúvida sobre o que preparar, experimente o botão Estou com sorte para obter uma sugestão aleatória.
 
 ## Créditos
-
-Este projeto foi criado como parte da Imersão Dev da **Alura** em colaboração com o **Google Gemini**.
-
----
-
 As imagens utilizadas no banner do site foram obtidas através do site [freepik.com](https://www.freepik.com/).
 
 As imagens das receitas foram retiradas dos sites mencionados nas receitas.
